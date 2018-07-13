@@ -42,6 +42,8 @@ def documentLink(context):
         send(context, '这有一份OpenJDK 7的文档链接，请保存书签：https://docs.oracle.com/javase/7/docs/api/')
     elif any(k in CONTENT for k in ['ANDROID','安卓']) and 'STUDIO' not in CONTENT:
         send(context, '这里有一份Android的文档链接，请保存书签：https://developer.android.google.cn/reference/')
+    elif any(k in CONTENT for k in ['guide','教程']) and 'GUIDE' not in CONTENT:
+        send(context, '这里有一份Android的文档链接，请保存书签：https://developer.android.google.cn/guide/')
     elif any(k in CONTENT for k in ['ANDROID STUDIO','AS','安卓死丢丢']):
         send(context, '这里有一份Android Studio的文档链接，请保存书签：https://developer.android.google.cn/studio/intro/')
     elif 'OKHTTP' in CONTENT:
@@ -55,6 +57,7 @@ def learnLink(context):
         send(context,LongText.learnJava)
     elif any(k in CONTENT for k in ['ANDROID','安卓']):
         send(context,LongText.learnAndroid)
+        
 
 @qqbotsched(hour='07', minute='00', day_of_week='mon-fri')
 def morningTask(bot):
